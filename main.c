@@ -11,7 +11,7 @@ void detect_command(char *command, stack_t **stack, unsigned int lineCount)
     }
     if(strcmp("pall", command) == 0)
     {
-        /* Execute pall-related function */
+        pall(stack);
         found = 1;
     }
 
