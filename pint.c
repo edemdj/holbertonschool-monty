@@ -19,8 +19,7 @@ void pint(stack_t **stack, unsigned int line_number)
     }
 
     head = *stack;
-    *stack = (*stack)->next;
-
+ 
     head->next = NULL;
     free(head);
 
