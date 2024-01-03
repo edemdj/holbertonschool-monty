@@ -1,8 +1,8 @@
-#ifndef _STACKS_MONTY_
-#define _STACKS_MONTY_
+#ifndef MONTY_H
+#define MONTY_H
 
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include <stddef.h>
 #include <ctype.h>
@@ -21,6 +21,7 @@ typedef struct stack_s
         struct stack_s *prev;
         struct stack_s *next;
 } stack_t;
+
 /**
  * struct instruction_s - opcode and its function
  * @opcode: the opcode
@@ -37,5 +38,10 @@ typedef struct instruction_s
 
 void detect_command(char *command, stack_t **stack, unsigned int lineCount);
 stack_t *add_node(stack_t **stack, const int n);
+char **parse_line(char *str);
+int check_opcode(char *str, int lineno, stack_t **stack);
+int push(char *num_char, stack_t **stack_top, int lineno);
+void pall(stack_t **stack);
+void pint(stack_t **stack, unsigned int line_number);
 void op_push(stack_t **stack, unsigned int lineCount);
 #endif

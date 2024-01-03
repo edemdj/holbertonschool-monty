@@ -12,16 +12,7 @@ void detect_command(char *command, stack_t **stack, unsigned int lineCount)
     }
     if(strcmp("pall", command) == 0)
     {
-        stack_t *head;
-        head = *stack;
-
-        while (head != NULL)
-        {
-            printf("%d\n", head->n);
-            head = head->next;
-            
-        }
-
+	pall(stack);
         found = 1;
     }
 
