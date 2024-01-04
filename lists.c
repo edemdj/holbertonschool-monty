@@ -1,6 +1,11 @@
 #include "monty.h"
 
-
+/**
+ * add_node - Add a node to a stack
+ * @stack: Stack data
+ * @n: Value of the node
+ * Return: the adress of the new node
+*/
 stack_t *add_node(stack_t **stack, const int n)
 {
 	stack_t *new;
@@ -12,7 +17,7 @@ stack_t *add_node(stack_t **stack, const int n)
 		return (NULL);
 	new->n = n;
 
-	if(*stack == NULL)
+	if (*stack == NULL)
 	{
 		*stack = new;
 	} else
@@ -21,7 +26,7 @@ stack_t *add_node(stack_t **stack, const int n)
 		new->next = *stack;
 	}
 
-	if (queue.queue == 0 || queue.stack_len == 0)
+	if (stacklen == 0)
 		*stack = new;
 	return (new);
 }

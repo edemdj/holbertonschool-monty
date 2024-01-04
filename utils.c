@@ -1,16 +1,21 @@
 #include "monty.h"
 
+/**
+ * freeStack - Free the stack
+ * @status: Status Code
+ * @arg: The data to free
+*/
 void freeStack(int status, void *arg)
 {
 	stack_t **stack;
 	stack_t *next;
 
-    (void)status;
+	(void)status;
 	stack = (stack_t **)arg;
 	if (*stack)
 	{
-        if((*stack)->prev)
-		    (*stack)->prev->next = NULL;
+		if ((*stack)->prev)
+			(*stack)->prev->next = NULL;
 		(*stack)->prev = NULL;
 	}
 	while (*stack != NULL)
@@ -19,9 +24,14 @@ void freeStack(int status, void *arg)
 		free(*stack);
 		*stack = next;
 	}
-	queue.stack_len = 0;
+	stacklen = 0;
 }
 
+/**
+ * freeLine - Free the lineptr
+ * @status: Status Code
+ * @arg: The data to free
+*/
 void freeLine(int status, void *arg)
 {
 	char **lineptr = arg;
@@ -31,6 +41,11 @@ void freeLine(int status, void *arg)
 		free(*lineptr);
 }
 
+/**
+ * closeFile - Close the opened file
+ * @status: Status Code
+ * @arg: The data to free
+*/
 void closeFile(int status, void *arg)
 {
 	FILE *fs;

@@ -7,18 +7,7 @@
 #include <stddef.h>
 #include <ctype.h>
 
-
-/**
- * struct var_s - struct to contain the main variables of the Monty interpreter
- * @queue: flag to determine if in stack vs queue mode
- * @stack_len: length of the stack
- */
-typedef struct queue_s
-{
-	int queue;
-	size_t stack_len;
-} queue_t;
-extern queue_t queue;
+int stacklen;
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -30,9 +19,9 @@ extern queue_t queue;
  */
 typedef struct stack_s
 {
-        int n;
-        struct stack_s *prev;
-        struct stack_s *next;
+		int n;
+		struct stack_s *prev;
+		struct stack_s *next;
 } stack_t;
 
 /**
@@ -45,8 +34,8 @@ typedef struct stack_s
  */
 typedef struct instruction_s
 {
-        char *opcode;
-        void (*f)(stack_t **stack, unsigned int line_number);
+		char *opcode;
+		void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 void freeStack(int status, void *arg);
 void freeLine(int status, void *arg);
