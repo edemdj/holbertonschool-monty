@@ -1,6 +1,7 @@
 #ifndef MONTY_H
 #define MONTY_H
 
+#include <stdlib.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -8,6 +9,7 @@
 #include <ctype.h>
 
 int stacklen;
+
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
