@@ -14,7 +14,7 @@ int numbersOnly(char *arg)
     return (0);
 }
 
-void op_push(stack_t **stack, unsigned int lineCount)
+void op_push(stack_t **stack, unsigned int line_number)
 {
     char *arg;
     int n;
@@ -22,8 +22,8 @@ void op_push(stack_t **stack, unsigned int lineCount)
     arg = strtok(NULL, "\n\t\r ");
     if (arg == NULL || numbersOnly(arg))
     {
-        dprintf(1, "L%u: Usage: push <int>\n",
-            lineCount);
+        dprintf(1, "L%u: usage: push integer\n",
+            line_number);
         exit(EXIT_FAILURE);
     }
     n = atoi(arg);
@@ -32,5 +32,4 @@ void op_push(stack_t **stack, unsigned int lineCount)
         dprintf(1, "Error: unable to add node\n");
         exit(EXIT_FAILURE);
     }
-    printf("Finished push of %d\n", n);
 }
