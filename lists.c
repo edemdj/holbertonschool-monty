@@ -22,7 +22,7 @@ stack_t *add_node(stack_t **stack, const int n)
 		*stack = new;
 	} else
 	{
-		while((*stack)->prev != NULL)
+		while ((*stack)->prev != NULL)
 			(*stack) = (*stack)->prev;
 		(*stack)->prev = new;
 		new->next = *stack;
