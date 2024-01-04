@@ -3,9 +3,13 @@
 
 #include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include <stddef.h>
 #include <ctype.h>
+
+int stacklen;
+
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -17,9 +21,9 @@
  */
 typedef struct stack_s
 {
-        int n;
-        struct stack_s *prev;
-        struct stack_s *next;
+		int n;
+		struct stack_s *prev;
+		struct stack_s *next;
 } stack_t;
 
 /**
@@ -32,14 +36,17 @@ typedef struct stack_s
  */
 typedef struct instruction_s
 {
-        char *opcode;
-        void (*f)(stack_t **stack, unsigned int line_number);
+		char *opcode;
+		void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
-
-char **parse_line(char *str);
-int check_opcode(char *str, int lineno, stack_t **stack);
-int push(char *num_char, stack_t **stack_top, int lineno);
-void pall(stack_t **stack);
+void freeStack(int status, void *arg);
+void freeLine(int status, void *arg);
+void closeFile(int status, void *arg);
+void detect_command(char *command, stack_t **stack, unsigned int line_number);
+stack_t *add_node(stack_t **stack, const int n);
+void pall(stack_t **stack, unsigned int line_number);
 void pint(stack_t **stack, unsigned int line_number);
-void op_push(stack_t **stack, unsigned int lineCount);
+void op_push(stack_t **stack, unsigned int line_number);
+void op_pop(stack_t **stack, unsigned int line_number);
+void op_swap(stack_t **stack, unsigned int line_number);
 #endif
