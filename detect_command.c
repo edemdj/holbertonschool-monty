@@ -1,13 +1,22 @@
 #include "monty.h"
 
+/**
+ * detect_command - Detect any opcode and execute
+ * linked function
+ * @command: command name
+ * @stack: Stack data
+ * @line_number: Number of the actual line
+*/
 void detect_command(char *command, stack_t **stack, unsigned int line_number)
 {
-    size_t i;
+	size_t i;
+
 	instruction_t opcodes[] = {
 		{"push", op_push},
 		{"pall", pall},
 		{"pint", pint},
 		{"pop", op_pop},
+		{"swap", op_swap},
 		{NULL, NULL}
 	};
 
