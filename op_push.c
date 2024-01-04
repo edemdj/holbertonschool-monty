@@ -22,7 +22,7 @@ void op_push(stack_t **stack, unsigned int lineCount)
     arg = strtok(NULL, "\n\t\r ");
     if (arg == NULL || numbersOnly(arg))
     {
-        dprintf(1, "%u: Usage: push <int>\n",
+        dprintf(1, "L%u: Usage: push <int>\n",
             lineCount);
         exit(EXIT_FAILURE);
     }

@@ -4,26 +4,24 @@
 stack_t *add_node(stack_t **stack, const int n)
 {
 	stack_t *new;
+	stack_t *node;
 
 	if (stack == NULL)
 		return (NULL);
 	new = malloc(sizeof(stack_t));
+	node = *stack;
 	if (new == NULL)
 		return (NULL);
 	new->n = n;
-	
-	if (*stack == NULL)
+	if (node != NULL)
 	{
-		new->prev = new;
-		new->next = new;
+		while (node->next != NULL)
+			node = node->next;
+		node->next = new;
 	}
 	else
-	{
-		(*stack)->prev->next = new;
-		new->prev = (*stack)->prev;
+		*stack = new;
 
-		(*stack)->prev = new;
-		new->next = *stack;
-	}
+	new->prev = node;
 	return (new);
 }

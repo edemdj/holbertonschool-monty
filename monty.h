@@ -38,9 +38,6 @@ typedef struct instruction_s
 
 void detect_command(char *command, stack_t **stack, unsigned int lineCount);
 stack_t *add_node(stack_t **stack, const int n);
-char **parse_line(char *str);
-int check_opcode(char *str, int lineno, stack_t **stack);
-int push(char *num_char, stack_t **stack_top, int lineno);
 void pall(stack_t **stack);
 void pint(stack_t **stack, unsigned int line_number);
 void op_push(stack_t **stack, unsigned int lineCount);

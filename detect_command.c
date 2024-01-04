@@ -12,13 +12,12 @@ void detect_command(char *command, stack_t **stack, unsigned int lineCount)
     }
     if(strcmp("pall", command) == 0)
     {
-	pall(stack);
         found = 1;
     }
 
     if(found == 0)
     {
-        dprintf(1, "%u: Unknown command %s\n", 
+        dprintf(1, "L%u: Unknown command %s\n", 
             lineCount, command);
 	    exit(EXIT_FAILURE);
     }
