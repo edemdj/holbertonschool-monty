@@ -6,6 +6,19 @@
 #include <string.h>
 #include <stddef.h>
 #include <ctype.h>
+
+
+/**
+ * struct var_s - struct to contain the main variables of the Monty interpreter
+ * @queue: flag to determine if in stack vs queue mode
+ * @stack_len: length of the stack
+ */
+typedef struct queue_s
+{
+	int queue;
+	size_t stack_len;
+} queue_t;
+extern queue_t queue;
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer

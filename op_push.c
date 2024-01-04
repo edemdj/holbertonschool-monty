@@ -32,4 +32,5 @@ void op_push(stack_t **stack, unsigned int line_number)
         dprintf(1, "Error: unable to add node\n");
         exit(EXIT_FAILURE);
     }
+    queue.stack_len++;
 }
