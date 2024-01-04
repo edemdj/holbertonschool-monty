@@ -8,6 +8,7 @@ void detect_command(char *command, stack_t **stack, unsigned int line_number)
 		{"pall", pall},
 		{"pint", pint},
 		{"pop", op_pop},
+        {"swap", op_swap},
 		{NULL, NULL}
 	};
 

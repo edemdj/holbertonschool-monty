@@ -29,7 +29,7 @@ void op_push(stack_t **stack, unsigned int line_number)
     n = atoi(arg);
     if (!add_node(stack, n))
     {
-        dprintf(1, "Error: unable to add node\n");
+        dprintf(1, "Error: malloc failed\n");
         exit(EXIT_FAILURE);
     }
     queue.stack_len++;
