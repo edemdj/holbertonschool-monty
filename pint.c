@@ -8,8 +8,7 @@
 */
 void pint(stack_t **stack, unsigned int line_number)
 {
-    stack_t *head = NULL;
-
+    
     if (*stack == NULL)
     {
         dprintf(2, "L%d: can't pint, stack empty\n", line_number);
