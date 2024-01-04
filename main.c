@@ -1,19 +1,22 @@
 #include "monty.h"
 
-queue_t queue;
-
+/**
+ * main - Main entry
+ * @argc: Argument count
+ * @argv: Argument values
+ * Return: integer
+*/
 int main(int argc, char *argv[])
 {
-    stack_t *stack = NULL;
+	stack_t *stack = NULL;
 	unsigned int line_number = 0;
 	FILE *file = NULL;
 	char *lineptr = NULL;
-    char *command = NULL;
-    size_t buff = 0;
+	char *command = NULL;
+	size_t buff = 0;
 
-	queue.queue = 0;
-	queue.stack_len = 0;
-    if (argc != 2)
+	stacklen = 0;
+	if (argc != 2)
 	{
 		dprintf(1, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
@@ -29,14 +32,14 @@ int main(int argc, char *argv[])
 	on_exit(freeLine, &lineptr);
 	on_exit(freeStack, &stack);
 	on_exit(closeFile, file);
-    while (getline(&lineptr, &buff, file) != -1)
+	while (getline(&lineptr, &buff, file) != -1)
 	{
 		line_number++;
 		command = strtok(lineptr, "\n\t\r ");
 		if (command != NULL && command[0] != '#')
 		{
-            detect_command(command, &stack, line_number);
+			detect_command(command, &stack, line_number);
 		}
 	}
-    exit(EXIT_SUCCESS);
+	exit(EXIT_SUCCESS);
 }
