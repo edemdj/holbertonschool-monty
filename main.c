@@ -1,5 +1,6 @@
 #include "monty.h"
 
+queue_t queue;
 
 int main(int argc, char *argv[])
 {
@@ -10,6 +11,8 @@ int main(int argc, char *argv[])
     char *command = NULL;
     size_t buff = 0;
 
+	queue.queue = 0;
+	queue.stack_len = 0;
     if (argc != 2)
 	{
 		dprintf(1, "USAGE: monty file\n");
@@ -23,6 +26,9 @@ int main(int argc, char *argv[])
 		exit(EXIT_FAILURE);
 	}
 
+	on_exit(freeLine, &lineptr);
+	on_exit(freeStack, &stack);
+	on_exit(closeFile, file);
     while (getline(&lineptr, &buff, file) != -1)
 	{
 		line_number++;

@@ -6,6 +6,19 @@
 #include <string.h>
 #include <stddef.h>
 #include <ctype.h>
+
+
+/**
+ * struct var_s - struct to contain the main variables of the Monty interpreter
+ * @queue: flag to determine if in stack vs queue mode
+ * @stack_len: length of the stack
+ */
+typedef struct queue_s
+{
+	int queue;
+	size_t stack_len;
+} queue_t;
+extern queue_t queue;
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -35,8 +48,10 @@ typedef struct instruction_s
         char *opcode;
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
-
-void detect_command(char *command, stack_t **stack, unsigned int lineCount);
+void freeStack(int status, void *arg);
+void freeLine(int status, void *arg);
+void closeFile(int status, void *arg);
+void detect_command(char *command, stack_t **stack, unsigned int line_number);
 stack_t *add_node(stack_t **stack, const int n);
 void pall(stack_t **stack, unsigned int line_number);
 void pint(stack_t **stack, unsigned int line_number);
