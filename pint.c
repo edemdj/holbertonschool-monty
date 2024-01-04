@@ -15,15 +15,6 @@ void pint(stack_t **stack, unsigned int line_number)
         dprintf(2, "L%d: can't pint, stack empty\n", line_number);
         exit(EXIT_FAILURE);
     }
-
-    head = *stack;
- 
-    head->next = NULL;
-    free(head);
-
-    if (*stack)
-    {
-        printf("%d\n", head->n, line_number);
-    }
+        printf("%d\n", (*stack)->n);
 
 }
