@@ -24,7 +24,6 @@ void freeStack(int status, void *arg)
 		free(*stack);
 		*stack = next;
 	}
-	stacklen = 0;
 }
 
 /**
