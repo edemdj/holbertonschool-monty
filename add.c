@@ -3,12 +3,12 @@
  * add - adds the top two elements of the stack
  *  @stack: the stack
  * @line_number: current line number of the bytecode file
- *
+ * @n:integer
  * Return: Nothing
 */
 void add(stack_t **stack, unsigned int line_number)
 {
-    stack_t *ptr;
+    int sum = 0;
     
     if (stacklen < 2)
     {
@@ -16,7 +16,7 @@ void add(stack_t **stack, unsigned int line_number)
         exit(EXIT_FAILURE);
     }
     
-   n += (*stack)->n;
-	m_pop(stack, line_number);
-	(*stack)->n += n;
+   sum = (*stack)->n + (*stack)->next->n;
+	op_pop(stack, line_number);
+	(*stack)->n = sum;
 }
