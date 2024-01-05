@@ -17,9 +17,6 @@ void _add(stack_t **stack, unsigned int line_number, char *value)
 		exit(EXIT_FAILURE);
 	}
 
-	if (!*stack || !(*stack)->next)
-   sum = (*stack)->n + (*stack)->next->n;
-	op_pop(stack, line_number);
-	(*stack)->n = sum;
+	
 
 }
