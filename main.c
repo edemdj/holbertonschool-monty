@@ -39,5 +39,5 @@ int main(int argc, char *argv[])
 			detect_command(command, &stack, line_number);
 		}
 	}
-	exit(EXIT_SUCCESS);
+	return (0);
 }
