@@ -12,7 +12,7 @@ void add(stack_t **stack, unsigned int line_number)
     char *arg;
     int i;
     
-    for (i = 0; arg[i] > 2; i++);
+    for (i = 0; arg[i] > 2; i++)
     {
         dprintf(1, "L%u: can't add, stack too short/n", line_number);
         exit(EXIT_FAILURE);
