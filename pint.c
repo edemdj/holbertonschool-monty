@@ -23,6 +23,6 @@ void pint(stack_t **stack, unsigned int line_number)
 
 	if (*stack)
 	{
-		printf("%d\n", head->n, line_number);
+		printf("%d\n", head->n);
 	}
 }
