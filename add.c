@@ -6,7 +6,7 @@
  * @n:integer
  * Return: Nothing
 */
-void _add(stack_t **stack, unsigned int line_number)
+void add(stack_t **stack, unsigned int line_number)
 {
 	
 	int n = 0;
