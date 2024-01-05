@@ -1,5 +1,4 @@
 #include "monty.h"
-
 /**
  * main - Main entry
  * @argc: Argument count
@@ -41,4 +40,4 @@ int main(int argc, char *argv[])
 		}
 	}
 	exit(EXIT_SUCCESS);
-}
+}	
