@@ -9,8 +9,6 @@
 void add(stack_t **stack, unsigned int line_number)
 {
     stack_t *head;
-    char *arg;
-    int i;
     
     if (stacklen < 2)
     {
