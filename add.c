@@ -9,10 +9,11 @@
 void add(stack_t **stack, unsigned int line_number)
 {
     stack_t *head;
+    char *arg;
     
-    if (var.stack_len < 2)
+    if (arg < 2)
     {
-        dprintf("L%u: can't add, stack too short/n", line_number);
+        dprintf(1, "L%u: can't add, stack too short/n", line_number);
         exit(EXIT_FAILURE);
     }
     
