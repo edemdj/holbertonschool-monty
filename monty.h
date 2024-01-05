@@ -7,7 +7,6 @@
 #include <stddef.h>
 #include <ctype.h>
 
-int stacklen;
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -41,7 +40,6 @@ void freeStack(int status, void *arg);
 void freeLine(int status, void *arg);
 void closeFile(int status, void *arg);
 void detect_command(char *command, stack_t **stack, unsigned int line_number);
-stack_t *add_node(stack_t **stack, const int n);
 void pall(stack_t **stack, unsigned int line_number);
 void pint(stack_t **stack, unsigned int line_number);
 void op_push(stack_t **stack, unsigned int line_number);
