@@ -11,6 +11,7 @@ void freeStack(int status, void *arg)
 	stack_t *next;
 
 	(void)status;
+	if(status == 0) return;
 	stack = (stack_t **)arg;
 	if (*stack)
 	{
@@ -35,6 +36,7 @@ void freeLine(int status, void *arg)
 {
 	char **lineptr = arg;
 
+	if(status == 0) return;
 	(void)status;
 	if (*lineptr != NULL)
 		free(*lineptr);
@@ -50,6 +52,7 @@ void closeFile(int status, void *arg)
 	FILE *fs;
 
 	(void)status;
+	if(status == 0) return;
 	fs = (FILE *) arg;
 	fclose(fs);
 }

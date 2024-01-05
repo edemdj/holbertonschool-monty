@@ -27,6 +27,9 @@ int main(int argc, char *argv[])
 		exit(EXIT_FAILURE);
 	}
 
+	on_exit(freeLine, &lineptr);
+	on_exit(freeStack, &stack);
+	on_exit(closeFile, file);
 	while (getline(&lineptr, &buff, file) != -1)
 	{
 		line_number++;
