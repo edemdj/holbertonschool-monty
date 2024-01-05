@@ -21,5 +21,6 @@ void add(stack_t **stack, unsigned int line_number)
     ptr = ((head)->next)->n + head->n;
     free(head);
     head = ptr;
+    head = *stack;
 
 }
