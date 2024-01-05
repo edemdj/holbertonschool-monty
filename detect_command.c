@@ -17,6 +17,7 @@ void detect_command(char *command, stack_t **stack, unsigned int line_number)
 		{"pint", pint},
 		{"pop", op_pop},
 		{"swap", op_swap},
+		{"nop", op_nop}
 		{NULL, NULL}
 	};
 
