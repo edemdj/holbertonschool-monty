@@ -6,10 +6,10 @@
  * @n:integer
  * Return: Nothing
 */
-void _add(stack_t **stack, unsigned int line_number, char *value)
+void _add(stack_t **stack, unsigned int line_number)
 {
-	/*(void)value;*/
-	int sum = 0;
+	
+	int n = 0;
 
     if (!*stack || !(*stack)->next)
 	{
@@ -17,6 +17,8 @@ void _add(stack_t **stack, unsigned int line_number, char *value)
 		exit(EXIT_FAILURE);
 	}
 
-	
+    n += (*stack)->n;
+	op_pop(stack, line_number);
+	(*stack)->n += n;
 
 }
