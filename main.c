@@ -39,5 +39,8 @@ int main(int argc, char *argv[])
 			detect_command(command, &stack, line_number);
 		}
 	}
+	freeLine(0, &lineptr);
+	freeStack(0, &stack);
+	closeFile(0, file);
 	return (0);
 }
