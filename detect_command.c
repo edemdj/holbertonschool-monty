@@ -29,7 +29,7 @@ void detect_command(char *command, stack_t **stack, unsigned int line_number)
 		}
 	}
 
-	dprintf(1,
+	dprintf(2,
 		"L%u: unknown instruction %s\n",
 		line_number, command);
 	exit(EXIT_FAILURE);
