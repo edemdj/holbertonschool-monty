@@ -19,7 +19,7 @@ void op_push(stack_t **stack, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 
-	arg = strtok(NULL, "\n\t\r ");
+	arg = strtok(NULL, " ");
 	n = atoi(arg);
 	if (n == 0)
 	{
