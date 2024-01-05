@@ -29,8 +29,6 @@ void detect_command(char *command, stack_t **stack, unsigned int line_number)
 		}
 	}
 
-	dprintf(2,
-		"L%u: unknown instruction %s\n",
-		line_number, command);
+	dprintf(2, "L%i: unknown instruction %s\n", line_number, command);
 	exit(EXIT_FAILURE);
 }
